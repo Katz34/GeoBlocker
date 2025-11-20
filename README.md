@@ -1,9 +1,9 @@
 # GeoBlocker User Guide
 ## Table of Contents
 - [Introduction](#introduction)
-- [Features](#features)
 - [Installation](#installation)
 - [Personal-API](#how-to-setup-your-personal-api-key)
+- [About-Creator](#about creator)
 
 ## Introduction
 GeoBlocker is a self-hosted chrome extension. It completely removes content from a specific country listed by the user on the pop-up interface of the extension. Content removal takes place on homepage, search results, video recommendations tab, and suggested video tiles after a video ends.
