@@ -1,4 +1,5 @@
-# Table of Contents
+# GeoBlocker User Guide
+## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
