@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>🌍 GeoFilter Settings</h2>
+    
+    <div class="input-group">
+      <label>YouTube API Key</label>
+      <input type="password" id="apiKey" placeholder="Paste API Key here">
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="input-group">
+      <label>Block Countries (ISO 2 Code)</label>
+      <div class="row">
+        <input type="text" id="countryInput" placeholder="e.g. US, IN, RU" maxlength="2">
+        <button id="addBtn">Add</button>
+      </div>
+      <small>Use 2-letter codes (e.g., US, UK, IN)</small>
+    </div>
+
+    <div id="chipContainer" class="chip-container">
+      <!-- Chips will appear here -->
+    </div>
+
+    <button id="saveBtn" class="save-btn">Save Changes</button>
+    <div id="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
