@@ -22,7 +22,7 @@ API Keys cost no money. I've mentioned it as I used to think they were paid. But
 STEP-1: Head over to <a href="https://console.cloud.google.com/" target="_blank">https://console.cloud.google.com/</a><br>
 STEP-2: Click on new project, give it any name you like and keep the Organisation option set to "No Organisation"<br>
 STEP-3: Click on the three lines option ont he top-left corner. Scroll if you have to, to find APIs and services. Then select Credentials.<br>
-STEP-4: Click on Create credentials, select API Key from the drop-down.
+STEP-4: Click on Create credentials, select API Key from the drop-down.<br>
 STEP-5: Leave Application restrictions to None, and set API restrictions to Youtube Data API v3, then click on create.<br>
 STEP-6: Now before enabling it, just copy it first, by clicking Show key<br>
 STEP-7: Head back to Enabled APIs and services to enable it. Enable it by clicking on Enable APIs and services in blue colour on the top.
