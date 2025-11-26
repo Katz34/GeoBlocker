@@ -1,18 +1,22 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>GeoBlocker</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* tiny inline fallback styling so popup isn't completely blank if styles.css fails */
+    body{font-family:Arial,Helvetica,sans-serif;min-width:320px;padding:12px;color:#111}
+  </style>
 </head>
 <body>
   <div class="container">
     <h2>GeoBlocker</h2>
-    <p>Select countries to block. Search the list, choose one, then click <strong>Add</strong>.</p>
+    <p>Pick countries to block — search, select, Add.</p>
 
     <div class="input-row">
-      <input id="countryFilter" placeholder="Type to filter countries..." />
+      <input id="countryFilter" placeholder="Type to filter countries..."/>
     </div>
 
     <div class="input-row">
@@ -21,22 +25,19 @@
 
     <div class="input-row">
       <button id="addBtn">Add</button>
-      <button id="addAllBtn" title="Block all visible list entries">Add Selected</button>
+      <button id="addAllBtn">Add Visible</button>
     </div>
 
     <div id="list" class="list"></div>
 
     <div class="footer">
-      <button id="clearCache">Clear channel cache</button>
+      <button id="clearCache">Clear cache</button>
       <button id="resetAll" class="danger">Reset all</button>
     </div>
 
-    <div class="small">
-      Note: Some YouTube channels do not list a country on their About page.
-    </div>
+    <div class="small">Note: Some channels don't set a country on their About page.</div>
   </div>
 
-  <script src="countries.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
