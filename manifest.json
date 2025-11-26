@@ -1,25 +1,31 @@
 {
-    "manifest_version": 3,
-    "name": "YouTube GeoFilter",
-    "version": "1.0",
-    "description": "Filter YouTube search results by channel country.",
-    "permissions": ["storage"],
-    "host_permissions": ["https://www.googleapis.com/*"],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-      }
-    },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://www.youtube.com/*"],
-        "js": ["content.js"]
-      }
-    ]
-  }
+  "manifest_version": 3,
+  "name": "GeoBlocker",
+  "description": "Blocks YouTube videos from selected regions.",
+  "version": "2.0.0",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

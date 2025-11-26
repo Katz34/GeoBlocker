@@ -1,35 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
+  <meta charset="utf-8" />
+  <title>GeoBlocker</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h2>GeoFilter Settings</h2>
-    
-    <div class="input-group">
-      <label>YouTube API Key</label>
-      <input type="password" id="apiKey" placeholder="Paste API Key here">
+    <h2>GeoBlocker</h2>
+    <p>Select countries to block. Search the list, choose one, then click <strong>Add</strong>.</p>
+
+    <div class="input-row">
+      <input id="countryFilter" placeholder="Type to filter countries..." />
     </div>
 
-    <div class="divider"></div>
-
-    <div class="input-group">
-      <label>Block Countries (ISO 2 Code)</label>
-      <div class="row">
-        <input type="text" id="countryInput" placeholder="e.g. US, IN, RU" maxlength="2">
-        <button id="addBtn">Add</button>
-      </div>
-      <small>Use 2-letter codes (e.g., US, UK, IN)</small>
+    <div class="input-row">
+      <select id="countrySelect" size="8"></select>
     </div>
 
-    <div id="chipContainer" class="chip-container">
-      <!-- Chips will appear here -->
+    <div class="input-row">
+      <button id="addBtn">Add</button>
+      <button id="addAllBtn" title="Block all visible list entries">Add Selected</button>
     </div>
 
-    <button id="saveBtn" class="save-btn">Save Changes</button>
-    <div id="status"></div>
+    <div id="list" class="list"></div>
+
+    <div class="footer">
+      <button id="clearCache">Clear channel cache</button>
+      <button id="resetAll" class="danger">Reset all</button>
+    </div>
+
+    <div class="small">
+      Note: Some YouTube channels do not list a country on their About page.
+    </div>
   </div>
+
+  <script src="countries.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

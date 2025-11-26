@@ -1,107 +1,74 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 320px;
-    background-color: #1e1e1e;
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    padding: 20px;
-  }
-  
-  h2 {
-    margin-top: 0;
-    color: #ff4d4d;
-    text-align: center;
-  }
-  
-  .input-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    font-size: 12px;
-    margin-bottom: 5px;
-    color: #aaa;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #444;
-    background: #2c2c2c;
-    color: white;
-    box-sizing: border-box;
-  }
-  
-  .row {
-    display: flex;
-    gap: 10px;
-  }
-  
-  button {
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-  }
-  
-  #addBtn {
-    background-color: #444;
-    color: white;
-    padding: 0 15px;
-  }
-  
-  .save-btn {
-    width: 100%;
-    background-color: #ff4d4d;
-    color: white;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 14px;
-  }
-  
-  .save-btn:hover {
-    background-color: #e60000;
-  }
-  
-  .chip-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
-    min-height: 40px;
-  }
-  
-  .chip {
-    background-color: #3a3a3a;
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .chip span {
-    cursor: pointer;
-    color: #ff4d4d;
-    font-weight: bold;
-  }
-  
-  .divider {
-    height: 1px;
-    background: #444;
-    margin: 15px 0;
-  }
-  
-  #status {
-    text-align: center;
-    font-size: 12px;
-    margin-top: 10px;
-    color: #4caf50;
-  }
+  font-family: Arial, sans-serif;
+  min-width: 320px;
+  padding: 12px;
+  color: #111;
+}
+
+.container h2 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+.input-row button {
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#countrySelect {
+  width: 100%;
+  padding: 4px;
+}
+
+.list {
+  margin-top: 8px;
+  max-height: 180px;
+  overflow: auto;
+  border: 1px solid #eee;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  align-items: center;
+}
+
+.remove {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.small {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #555;
+}
+
+button.danger {
+  background: #f9d6d6;
+}
