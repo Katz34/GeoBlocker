@@ -1,8 +1,10 @@
 let blockedCountries = [];
+let blockUnknown = false; // New variable
 let apiKey = "";
 
-chrome.storage.local.get(['blockedCountries', 'apiKey'], (result) => {
+chrome.storage.local.get(['blockedCountries', 'apiKey', 'blockUnknown'], (result) => {
   blockedCountries = result.blockedCountries || [];
+  blockUnknown = result.blockUnknown || false; // Load setting
   apiKey = result.apiKey || "";
   if (apiKey) startObserver();
 });
@@ -10,6 +12,7 @@ chrome.storage.local.get(['blockedCountries', 'apiKey'], (result) => {
 chrome.storage.onChanged.addListener((changes) => {
   if (changes.blockedCountries) blockedCountries = changes.blockedCountries.newValue;
   if (changes.apiKey) apiKey = changes.apiKey.newValue;
+  if (changes.blockUnknown) blockUnknown = changes.blockUnknown.newValue; // Update setting
 });
 
 function startObserver() {
@@ -41,10 +44,15 @@ function processContent() {
       }, (response) => {
         if (chrome.runtime.lastError) return;
         
-        if (response && response.country) {
-          if (blockedCountries.includes(response.country)) {
-            item.style.display = 'none';
-          }
+        const country = response && response.country ? response.country : "UNKNOWN";
+
+        // Logic 1: Block Specific Countries
+        if (blockedCountries.includes(country)) {
+          item.style.display = 'none';
+        } 
+        // Logic 2: Block Unknown (If enabled)
+        else if (blockUnknown && country === "UNKNOWN") {
+          item.style.display = 'none';
         }
       });
     }

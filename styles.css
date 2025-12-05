@@ -9,13 +9,24 @@ body {
 h2 { text-align: center; color: #ff4d4d; margin-top: 0; }
 .input-group { margin-bottom: 15px; }
 label { display: block; font-size: 12px; margin-bottom: 5px; color: #aaa; }
-input { width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #444; background: #2c2c2c; color: white; box-sizing: border-box; }
+input[type="text"], input[type="password"] { width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #444; background: #2c2c2c; color: white; box-sizing: border-box; }
 .row { display: flex; gap: 10px; }
 button { cursor: pointer; border: none; border-radius: 4px; }
 #addBtn { background-color: #444; color: white; padding: 0 15px; }
-.save-btn { width: 100%; background-color: #ff4d4d; color: white; padding: 10px; margin-top: 10px; }
+.save-btn { width: 100%; background-color: #ff4d4d; color: white; padding: 10px; margin-top: 15px; }
 .save-btn:hover { background-color: #e60000; }
-.chip-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; min-height: 40px; }
+.chip-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 5px; min-height: 40px; }
 .chip { background-color: #3a3a3a; padding: 5px 10px; border-radius: 15px; font-size: 12px; display: flex; align-items: center; gap: 5px; }
 .chip span { cursor: pointer; color: #ff4d4d; font-weight: bold; margin-left: 5px; }
+.divider { height: 1px; background: #333; margin: 15px 0; }
+.info-text { font-size: 10px; color: #777; margin-top: 5px; }
 #status { text-align: center; font-size: 12px; margin-top: 10px; color: #4caf50; }
+
+/* Toggle Switch Styles */
+.toggle-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: bold; }
+.switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #444; transition: .4s; border-radius: 34px; }
+.slider:before { position: absolute; content: ""; height: 14px; width: 14px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: #ff4d4d; }
+input:checked + .slider:before { transform: translateX(20px); }

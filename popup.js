@@ -4,16 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const chipContainer = document.getElementById('chipContainer');
   const saveBtn = document.getElementById('saveBtn');
   const apiKeyInput = document.getElementById('apiKey');
+  const blockUnknownInput = document.getElementById('blockUnknown'); // Checkbox
   const status = document.getElementById('status');
 
   let blockedCountries = [];
 
-  chrome.storage.local.get(['blockedCountries', 'apiKey'], (result) => {
+  // Load saved settings
+  chrome.storage.local.get(['blockedCountries', 'apiKey', 'blockUnknown'], (result) => {
     if (result.blockedCountries) {
       blockedCountries = result.blockedCountries;
       renderChips();
     }
     if (result.apiKey) apiKeyInput.value = result.apiKey;
+    // Load checkbox state (default false)
+    if (result.blockUnknown) blockUnknownInput.checked = result.blockUnknown;
   });
 
   addBtn.addEventListener('click', () => {
@@ -45,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
   saveBtn.addEventListener('click', () => {
     chrome.storage.local.set({
       blockedCountries: blockedCountries,
-      apiKey: apiKeyInput.value.trim()
+      apiKey: apiKeyInput.value.trim(),
+      blockUnknown: blockUnknownInput.checked // Save checkbox
     }, () => {
       status.textContent = 'Settings Saved';
       setTimeout(() => status.textContent = '', 2000);
